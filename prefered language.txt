@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function redirectToFeedbackForm() {
+            var language = document.getElementById("language").value;
+            var feedbackFormUrl = "";
+
+            if (language === "english") {
+                feedbackFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScMfP09AbvoE33gfePzC1Uu99gaEFioMzpZH2q1cGOlxH20MQ/viewform?usp=sf_link";
+            } else if (language === "amharic") {
+                feedbackFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScgXjU_CMyxnQuL5tbhUvfzN3SAm-hWAtSVZWOLT2WR5fIvJg/viewform?usp=sf_link";
+            }
+
+            window.location.href = feedbackFormUrl;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="redirectToFeedbackForm()">
+        <label for="language">Select a language:</label>
+        <select id="language" name="language">
+            <option value="english">English</option>
+            <option value="amharic">Amharic</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
